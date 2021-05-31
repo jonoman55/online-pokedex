@@ -1,0 +1,30 @@
+.api_wrapper {
+  align-items: center; 
+  justify-content: center; 
+  border-bottom-style: dashed; 
+  border-bottom-width: 1px; 
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 15px;
+}
+
+.api_font {
+  text-align: center;
+  font-size: 1.25rem; 
+  font-weight: bold;
+}
+
+.api_link:hover {
+  color: grey; 
+  text-decoration: underline;
+}
+
+.api_link {
+  padding: 5px;
+  color: #e3350d;
+  text-decoration: none;
+}
+
+.api_icon {
+  padding: 5px;
+}

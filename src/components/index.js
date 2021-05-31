@@ -1,0 +1,10 @@
+export { default as Footer } from './Footer/Footer';
+export { default as Header } from './Header/Header';
+export { default as Spinner } from './Spinner/Spinner';
+export { default as ApiCredit } from './ApiCredit/ApiCredit';
+export { default as PokemonList } from './PokemonList/PokemonList';
+export { default as PokemonDetails } from './PokemonDetails/PokemonDetails';
+export { default as SearchBar } from './SearchBar/SearchBar';
+export { default as GenSelector } from './GenSelector/GenSelector';
+export { default as Divider } from './Divider/Divider';
+export { default as GoToTop } from './GoToTop/GoToTop';
