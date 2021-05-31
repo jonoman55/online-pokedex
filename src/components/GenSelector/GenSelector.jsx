@@ -1,11 +1,11 @@
 import React from 'react';
 import { Dropdown } from 'react-dropdown-now';
-import '../../styles/pokeStyles.css';
 import 'react-dropdown-now/style.css';
+import '../../styles/pokeStyles.css';
 
 const GenSelector = ({ options, onSelect }) => {
     return (
-        <div className='gen-style'>
+        <div className='gen-select-style'>
             <Dropdown
                 placeholder='Select Generation'
                 options={options}

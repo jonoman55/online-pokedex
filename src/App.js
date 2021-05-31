@@ -5,7 +5,7 @@ import { formatGen } from '../src/helpers/text';
 import { ApiCredit, Footer, Header, GoToTop, SearchBar, GenSelector, PokemonList, PokemonDetails, Divider } from './components';
 import './styles/pokeStyles.css';
 
-const scrollToRef = () => window.scrollTo(0, 0);
+const scrollToRef = () => window.scrollTo(150, 250);
 
 function App() {
     const [genNumber, setGenNumber] = useState(1);
@@ -33,10 +33,10 @@ function App() {
         // eslint-disable-next-line
         setGenList(generations.results.map((p, i) => {
             let num = i++;
-            if (num <= 7 && num !== 0) {
+            if (num !== 0 && num <= 7) {
                 return formatGen(p.name) + ' ' + num;
             }
-        }));
+        }).filter(p => p !== undefined));
         setIsLoading(true);
     }
 
@@ -46,7 +46,7 @@ function App() {
         // eslint-disable-next-line
     }, [genNumber]);
 
-    const handleSelect = (pokemonId) => {
+    const handleSelect = async (pokemonId) => {
         setPokemonSelected(pokeList.filter((p) => p.id === pokemonId)[0]);
         setFilteredPokeList(
             filteredPokeList.map((p) =>

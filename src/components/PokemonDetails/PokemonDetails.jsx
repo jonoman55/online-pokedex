@@ -66,9 +66,9 @@ function PokemonDetails({ pokemon }) {
   
     function toggle() {
       setIsOpened(wasOpened => !wasOpened);
-      // <span className="close">X</span>
   };
 
+  // Removed close span from title: <h1 className="text-center">N.º {pokemon.id} {pokemon.name} <span className="close">X</span></h1>
   return (
     <div className="box pokemon-image-container">
       <div className="boxTitle" style={{ cursor: 'pointer'}} onClick={toggle}>

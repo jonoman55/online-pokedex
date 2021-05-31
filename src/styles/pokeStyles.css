@@ -158,7 +158,7 @@ ul li {
 }
 
 /* Gen Selector Dropdown Menu CSS */
-.gen-style {
+.gen-select-style {
   display: contents;
   flex-direction: column;
   text-align: center;

@@ -10,7 +10,7 @@ const Footer = () => {
                     name='copyright'
                     className='footer-icon' 
                 />
-                Copyright by:
+                    Copyright by:
                 <a className='footer-link' href='https://github.com/jonoman55/' alt='' target='blank'>
                     John Chiappetta 
                 </a>

@@ -7,14 +7,14 @@ export default class GoToTop extends Component {
         this.state = {
             is_visible: false
         };
-    }
+    };
 
     componentDidMount() {
         var scrollComponent = this;
         document.addEventListener("scroll", function (e) {
             scrollComponent.toggleVisibility();
         });
-    }
+    };
 
     toggleVisibility() {
         if (window.pageYOffset > 300) {
@@ -26,14 +26,14 @@ export default class GoToTop extends Component {
                 is_visible: false
             });
         }
-    }
+    };
 
     scrollToTop() {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-    }
+    };
 
     render() {
         const { is_visible } = this.state;
