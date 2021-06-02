@@ -120,18 +120,27 @@ ul li {
 }
 
 .pokemon-image-container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  display: block;
   margin-top: 2rem;
   border: 1px solid #F2F2F2;
   background-color: #F2F2F2;
   border-radius: 20px;
-  padding: 25px;
+  padding: 5px;
   text-transform: capitalize;
 }
 
 .pokemon-image-detail {
-  height: 300px;
-  padding: 25px;
-  text-transform: capitalize;
+  min-width: 75%;
+  max-width: 75%;
+  object-fit: contain;
+  display: flex;
+  border: 1px solid #F2F2F2;
+  border-radius: 20px;
 }
 
 .pokemon-list-details {
@@ -219,7 +228,7 @@ ul li {
   width: 65px;
   text-align: center;
   height: 65px;
-  line-height: 65px;
+  line-height: 0px; /*centered arrow*/
   border-radius: 50%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -300,7 +309,7 @@ footer {
 }
 
 .footer-link:hover {
-  color: grey;
+  color: rgb(192, 189, 189);
   cursor: pointer;
   text-decoration: underline;
 }

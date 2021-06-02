@@ -1,11 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { getPokemon, getData } from '../src/api/PokemonService';
 import { getGeneration } from '../src/api/PokemonCounts';
-import { formatGen } from '../src/helpers/text';
-import { ApiCredit, Footer, Header, GoToTop, SearchBar, GenSelector, PokemonList, PokemonDetails, Divider } from './components';
+import { formatGen, sanitizeGen } from '../src/helpers/text';
+import {
+    ApiCredit,
+    Footer,
+    Header,
+    GoToTop,
+    SearchBar,
+    GenSelector,
+    PokemonList,
+    PokemonDetails,
+    Divider
+} from './components';
 import './styles/pokeStyles.css';
 
-const scrollToRef = () => window.scrollTo(150, 250);
+const scrollToRef = () => window.scrollTo(100, 285);
 
 function App() {
     const [genNumber, setGenNumber] = useState(1);
@@ -26,19 +36,20 @@ function App() {
         setFilteredPokeList(pokemons);
         setPokeList(pokemons);
         setIsLoading(false);
-    }
+    };
 
     const fetchGens = async () => {
-        const generations = await getData(`https://pokeapi.co/api/v2/generation/`);
-        // eslint-disable-next-line
+        const generations = await getData('https://pokeapi.co/api/v2/generation/');
         setGenList(generations.results.map((p, i) => {
             let num = i++;
             if (num !== 0 && num <= 7) {
                 return formatGen(p.name) + ' ' + num;
+            } else {
+                return 'All Generations';
             }
-        }).filter(p => p !== undefined));
+        }).filter((p) => p !== undefined));
         setIsLoading(true);
-    }
+    };
 
     useEffect(() => {
         fetchPokemon();
@@ -65,18 +76,21 @@ function App() {
         setFilteredPokeList(filtered);
     };
 
-    const updateGen = async (gen) => {
-        if (gen) {
-            const getGenNumber = gen.value.split(' ')[1].trim();
-            const genNum = Number(getGenNumber);
-            setGenNumber(genNum)
-        }
-    };
-
     const clearFilter = async () => {
         if (filter) {
             setFilter('');
             setFilteredPokeList(pokeList);
+        }
+    };
+
+    const updateGen = async (gen) => {
+        if (gen) {
+            let getGenNumber = sanitizeGen(
+                gen === 'All Generations'
+                    ? 0 // NaN -> 0
+                    : Number(gen.value.split(' ')[1].trim())
+            );
+            setGenNumber(getGenNumber);
         }
     };
 

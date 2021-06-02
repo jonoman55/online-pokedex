@@ -14,12 +14,12 @@ export const counts = {
     total: 807
 };
 
-export const genNumbers = [1, 2, 3, 4, 5, 6, 7];
+export const genNumbers = [0, 1, 2, 3, 4, 5, 6, 7];
 
 export const getGeneration = (gen) => {
     switch (gen) {
         case 0:
-            return gen = { id: 9, offset: 0, limit: counts.total, msg: 'All Generations' }; // ID 9 for all Gens
+            return gen = { id: 0, offset: 0, limit: counts.total, msg: 'All Generations' }; // ID 0 for all Gens
         case 1:
             return gen = { id: 1, offset: counts.zero, limit: counts.gen1, msg: 'Generation 1' };
         case 2:
@@ -42,6 +42,7 @@ export const getGeneration = (gen) => {
 };
 
 export const GenerationsList = {
+    all: getGeneration(0),
     gen1: getGeneration(1),
     gen2: getGeneration(2),
     gen3: getGeneration(3),
@@ -49,6 +50,9 @@ export const GenerationsList = {
     gen5: getGeneration(5),
     gen6: getGeneration(6),
     gen7: getGeneration(7),
-    gen8: getGeneration(8),
-    gen9: getGeneration(9),
-}
+    default: getGeneration(8),
+};
+
+export const GenDropdownMenuOptions = [
+    { ...GenerationsList }
+]

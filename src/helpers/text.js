@@ -8,4 +8,11 @@ export const capitalize = (str) => {
 
 export function formatGen(str) {
     return capitalize(str.split('-')[0]);
-}
+};
+
+export function sanitizeGen(x) {
+    if (isNaN(x)) {
+        return 0;
+    }
+    return x;
+};
