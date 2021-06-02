@@ -31,8 +31,8 @@ function App() {
 
     const fetchPokemon = async () => {
         setGenNumber(genNumber)
-        let currentGen = getGeneration(genNumber);
-        const pokemons = await getPokemon(currentGen.offset, currentGen.limit);
+        let gen = getGeneration(genNumber);
+        const pokemons = await getPokemon(gen.offset, gen.limit);
         setFilteredPokeList(pokemons);
         setPokeList(pokemons);
         setIsLoading(false);
@@ -84,14 +84,11 @@ function App() {
     };
 
     const updateGen = async (gen) => {
-        if (gen) {
-            let getGenNumber = sanitizeGen(
-                gen === 'All Generations'
-                    ? 0 // NaN -> 0
-                    : Number(gen.value.split(' ')[1].trim())
-            );
-            setGenNumber(getGenNumber);
-        }
+        setGenNumber(sanitizeGen(
+            gen === 'All Generations'
+                ? 0 // NaN -> 0
+                : Number(gen.value.split(' ')[1].trim())
+        ));
     };
 
     return (
@@ -105,10 +102,8 @@ function App() {
                         <Divider padding='15px' />
                         <GenSelector options={genList} onSelect={updateGen} />
                         <Divider padding='15px' />
-                        <div>
-                            <SearchBar input={filter} onChange={updateFilter} />
-                            <button onClick={clearFilter}>Clear</button>
-                        </div>
+                        <SearchBar input={filter} onChange={updateFilter} />
+                        <button onClick={clearFilter}>Clear</button>
                         <Divider padding='15px' />
                         <div ref={myRef}>
                             <div className='pokemon-wrapper' onClick={executeScroll}>
