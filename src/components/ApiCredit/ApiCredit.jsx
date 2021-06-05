@@ -1,22 +1,21 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import styles from './ApiCredit.module.css';
+import useStyles from './styles';
 
-const ApiCredit = () => {
+export default function ApiCredit() {
+    const classes = useStyles();
     return (
-        <div className={styles.api_wrapper}>
-            <p className={styles.api_font}>
+        <div className={classes.root}>
+            <p className={classes.font}>
                 <FontAwesome
                     name='gamepad'
-                    className={styles.api_icon}
+                    className={classes.icon}
                 />
                     API by:
-                <a className={styles.api_link} href="https://pokeapi.co/" target="blank">
+                <a className={classes.link} href="https://pokeapi.co/" target="blank">
                     PokéApi.co
                 </a>
             </p>
         </div>
     );
 }
-
-export default ApiCredit;

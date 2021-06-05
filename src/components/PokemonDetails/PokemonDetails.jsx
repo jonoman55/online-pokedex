@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import '../../styles/pokeStyles.css';
 
 // TODO : Add pagination to PokemonDetails in order to be able to click to the next or previous pokemon
-
-function PokemonDetails({ pokemon }) {
+export default function PokemonDetails({ pokemon }) {
   const [isOpened, setIsOpened] = useState(true);
 
-    // TODO : Need to move this code to a custom material ui css file
+    // TODO : Need to move this code to a custom Material UI CSS file (makeStyles)
     const getTypeStyle = (type) => {
         let backgroundColor = "";
         switch (type) {
@@ -74,7 +73,6 @@ function PokemonDetails({ pokemon }) {
 
     // TODO : Refactor the UI code with MaterialUI components (with having the ability to close a selected pokemon)
     // TODO : Add more pokemon info (abilities, pokedex summary, egg group, moves, etc.)
-    // Removed close span from title: <h1 className="text-center">N.º {pokemon.id} {pokemon.name} <span className="close">X</span></h1>
     return (
         <div className="pokemon-image-container">
             <div style={{ cursor: 'pointer' }} onClick={toggle}>
@@ -87,20 +85,14 @@ function PokemonDetails({ pokemon }) {
                     <img
                         src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`}
                         alt={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
-                        className="img-fluid pokemon-image-detail d-block mx-auto"
+                        className="pokemon-image-detail"
                     />
-                    
-                    {/* <img src={createImgUrl(pokemon.id)}
-                        alt=''
-                        className="img-fluid pokemon-image-detail d-block mx-auto"
-                    /> */}
-
-                    <ul className="list-group list-group-horizontal justify-content-center">
+                    <ul>
                         {pokemon.types.length > 0 &&
                             pokemon.types.map((t, idx) => (
                                 <li
                                     key={idx}
-                                    className="list-group-item d-flex pokemon-list-details"
+                                    className="pokemon-list-details"
                                     style={getTypeStyle(t.type.name)}
                                 >
                                     {t.type.name}
@@ -112,5 +104,3 @@ function PokemonDetails({ pokemon }) {
         </div>
     );
 }
-
-export default PokemonDetails;

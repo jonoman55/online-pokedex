@@ -3,7 +3,7 @@ import { Dropdown } from 'react-dropdown-now';
 import 'react-dropdown-now/style.css';
 import '../../styles/pokeStyles.css';
 
-const GenSelector = ({ options, onSelect }) => {
+export default function GenSelector({ options, onSelect }) {
     return (
         <div className='gen-select-style'>
             <Dropdown
@@ -15,5 +15,3 @@ const GenSelector = ({ options, onSelect }) => {
         </div>
     );
 }
-
-export default GenSelector;

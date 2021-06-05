@@ -1,10 +1,12 @@
-export { default as Footer } from './Footer/Footer';
 export { default as Header } from './Header/Header';
-export { default as Spinner } from './Spinner/Spinner';
+export { default as Footer } from './Footer/Footer';
 export { default as ApiCredit } from './ApiCredit/ApiCredit';
+export { default as Spinner } from './Spinner/Spinner';
+export { default as Separator } from './Separator/Separator';
 export { default as PokemonList } from './PokemonList/PokemonList';
 export { default as PokemonDetails } from './PokemonDetails/PokemonDetails';
-export { default as SearchBar } from './SearchBar/SearchBar';
+export { default as PokeSearch } from './PokeSearch/PokeSearch';
 export { default as GenSelector } from './GenSelector/GenSelector';
-export { default as Divider } from './Divider/Divider';
+export { default as ClearButton } from './ClearButton/ClearButton';
+export { default as CssTextField } from './CssTextField/CssTextField';
 export { default as GoToTop } from './GoToTop/GoToTop';

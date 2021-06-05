@@ -1,8 +1,6 @@
 // TODO - Refactor this code into a reducer
-// eslint-disable-next-line
-// import { ALL_GENS, GEN_1, GEN_2, GEN_3, GEN_4, GEN_5, GEN_6, GEN_7 } from '../constants/genTypes';
 
-export const counts = {
+const counts = {
     zero: 0,
     gen1: 151,
     gen2: 100,
@@ -14,9 +12,7 @@ export const counts = {
     total: 807
 };
 
-export const genNumbers = [0, 1, 2, 3, 4, 5, 6, 7];
-
-export const getGeneration = (gen) => {
+export function getGeneration(gen) {
     switch (gen) {
         case 0:
             return gen = { id: 0, offset: 0, limit: counts.total, msg: 'All Generations' }; // ID 0 for all Gens
@@ -41,7 +37,7 @@ export const getGeneration = (gen) => {
     }
 };
 
-export const GenerationsList = {
+const generationsList = {
     all: getGeneration(0),
     gen1: getGeneration(1),
     gen2: getGeneration(2),
@@ -54,5 +50,5 @@ export const GenerationsList = {
 };
 
 export const GenDropdownMenuOptions = [
-    { ...GenerationsList }
-]
+    { ...generationsList }
+];

@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import '../../styles/pokeStyles.css';
 
-const Footer = () => {
+export default function Footer() {
     return (
         <footer>
             <p className='footer-font'>
@@ -19,5 +19,3 @@ const Footer = () => {
         </footer>
     );
 }
-
-export default Footer;

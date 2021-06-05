@@ -5,19 +5,19 @@ import { formatGen, sanitizeGen } from '../src/helpers/text';
 import {
     ApiCredit,
     Footer,
-    Header,
     GoToTop,
-    SearchBar,
     GenSelector,
+    Header,
     PokemonList,
     PokemonDetails,
-    Divider
+    PokeSearch,
+    Separator
 } from './components';
 import './styles/pokeStyles.css';
 
-const scrollToRef = () => window.scrollTo(100, 285);
+const scrollToRef = () => window.scrollTo(100, 290);
 
-function App() {
+export default function App() {
     const [genNumber, setGenNumber] = useState(1);
     const [genList, setGenList] = useState([]);
     const [pokeList, setPokeList] = useState([]);
@@ -99,12 +99,11 @@ function App() {
                 <div className="pokemon-app-container">
                     {pokemonSelected && <PokemonDetails pokemon={pokemonSelected} />}
                     <div className="pokemon-list-container">
-                        <Divider padding='15px' />
+                        <Separator />
                         <GenSelector options={genList} onSelect={updateGen} />
-                        <Divider padding='15px' />
-                        <SearchBar input={filter} onChange={updateFilter} />
-                        <button onClick={clearFilter}>Clear</button>
-                        <Divider padding='15px' />
+                        <Separator />
+                        <PokeSearch input={filter} onChange={updateFilter} onClick={clearFilter} />
+                        <Separator />
                         <div ref={myRef}>
                             <div className='pokemon-wrapper' onClick={executeScroll}>
                                 <PokemonList pokemons={filteredPokeList} selectPokemon={handleSelect} isLoading={isLoading} />
@@ -118,5 +117,3 @@ function App() {
         </div>
     );
 }
-
-export default App;

@@ -1,9 +1,8 @@
 import React from 'react';
 import spinner from '../../images/spinner.gif';
-import styles from './Spinner.module.css';
+import useStyles from './styles';
 
-const Spinner = () => {
-    return (<img className={styles.spinner} src={spinner} alt='Loading...' />);
+export default function Spinner() {
+    const classes = useStyles();
+    return <img className={classes.root} src={spinner} alt='Loading...' />;
 }
-
-export default Spinner;
