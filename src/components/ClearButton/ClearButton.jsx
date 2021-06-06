@@ -4,5 +4,5 @@ import useStyles from './styles';
 
 export default function ClearButton({ onClick }) {
     const classes = useStyles();
-    return <Button variant="contained" color="primary" className={classes.root} onClick={onClick}>Clear</Button>;
+    return <Button variant="contained" className={classes.root} onClick={onClick}>Clear</Button>;
 }

@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     },
     searchContainer: {
         margin: 'auto',
-        width: `calc(100% - ${theme.spacing(6 + 4)}px)`, // 6 button + 4 margin
+        width: `calc(100% - ${theme.spacing(6 + 6)}px)`, // 6 button + 6 margin
     },
     notchedOutline: {
         borderColor: 'hsl(0, 0%, 90%) !important'

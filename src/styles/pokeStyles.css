@@ -209,12 +209,14 @@ footer {
 }
 
 .pokemon-item-list.selected {
+  margin-bottom: 10px;
   border-width: 1px;
   background-color: hsl(11, 89%, 47%);
   color: hsl(0, 0%, 100%);
 }
 
 .pokemon-item-list:hover {
+  margin-bottom: 10px;
   border-width: 1px;
   background-color: hsl(0, 0%, 89%);
   color: hsl(0, 0%, 100%);
