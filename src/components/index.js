@@ -7,6 +7,7 @@ export { default as PokemonList } from './PokemonList/PokemonList';
 export { default as PokemonDetails } from './PokemonDetails/PokemonDetails';
 export { default as PokeSearch } from './PokeSearch/PokeSearch';
 export { default as GenSelector } from './GenSelector/GenSelector';
+export { default as DropdownMenu } from './DropdownMenu/DropdownMenu';
 export { default as ClearButton } from './ClearButton/ClearButton';
 export { default as CssTextField } from './CssTextField/CssTextField';
 export { default as GoToTop } from './GoToTop/GoToTop';

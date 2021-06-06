@@ -20,23 +20,23 @@ body {
   background-size: auto;
 }
 
-/* remove margins and bullets, etc. from list items */
-ul {
+/* Remove margins and bullets, etc. from list item html tags */
+ul, 
+li {
   list-style-type: none;
 }
 
-/* list items CSS */
+/* List Items CSS */
 li {
-  list-style-type: none;
-  border: 1px solid hsl(0, 0%, 89%);
-  margin-top: -1px;
-  background-color: hsl(0, 0%, 100%);
+  margin-top: 1px;
   padding: 10px;
-  text-decoration: none;
+  border: 1px solid hsl(0, 0%, 89%);
+  background-color: hsl(0, 0%, 100%);
   font-size: 20px;
   color: hsl(0, 0%, 0%);
   display: block;
   position: relative;
+  text-decoration: none;
 }
 
 /* Container CSS */
@@ -48,11 +48,11 @@ li {
   height: 100%;
   display: flex;
   font-weight: 500;
-  padding-bottom:60px;
+  padding-bottom: 60px;
 }
 
 /* Gen Selector Dropdown Menu CSS */
-.gen-select-style {
+.gen-select-wrapper {
   display: contents;
   flex-direction: column;
   text-align: center;
@@ -60,31 +60,7 @@ li {
   width: 50%;
 }
 
-.gen-dropdown {
-  border: 1px solid hsl(0, 0%, 89%);
-  font-weight: bold;
-  box-sizing: border-box;
-  color: hsl(0, 0%, 0%);
-  cursor: pointer;
-  display: flex;
-}
-
-/* SearchBar CSS */
-.search-bar {
-  background: hsl(0, 0%, 89%);
-  border: none;
-  padding: 0.5rem;
-  text-align: left;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  outline: none !important;
-}
-
-.search-bar:hover {
-  background-color: hsl(0, 2%, 75%);
-}
-
-/* Go To Top CSS */
+/* GoToTop CSS */
 .back-to-top .top {
   position: fixed;
   cursor: pointer;
@@ -147,7 +123,6 @@ header {
 footer {
   position: relative;
   font-weight: bold;
-  background-color: hsl(11, 89%, 47%);
   text-transform: capitalize;
   color: hsl(0, 0%, 0%);
   display: grid;
@@ -198,6 +173,11 @@ footer {
 
 .footer-date {
   font-size: 1rem;
+}
+
+/* Misc CSS */
+.center-text {
+  text-align: center;
 }
 
 /* Pokemon CSS */
@@ -259,20 +239,20 @@ footer {
   text-transform: capitalize;
 }
 
-.pokemon-list-details {
-  border-width: 1px;
-  padding: 10px;
-  width: fit-content;
-  border-radius: 1rem;
-}
-
-.pokemon-image-detail {
+.pokemon-image-details {
   min-width: 75%;
   max-width: 75%;
   object-fit: contain;
   display: flex;
   border: 1px solid hsl(0, 0%, 95%);
   border-radius: 20px;
+}
+
+.pokemon-list-details {
+  border-width: 1px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 1rem;
 }
 
 .pokemon-box-details {

@@ -68,6 +68,14 @@ export default function App() {
         );
     };
 
+    const updateGen = async (gen) => {
+        setGenNumber(sanitizeGen(
+            gen === 'All Generations'
+                ? 0 // NaN -> 0
+                : Number(gen.value.split(' ')[1].trim())
+        ));
+    };
+
     const updateFilter = async (input) => {
         const filtered = pokeList.filter(p => {
             return p.name.toLowerCase().includes(input.toLowerCase())
@@ -83,14 +91,16 @@ export default function App() {
         }
     };
 
-    const updateGen = async (gen) => {
-        setGenNumber(sanitizeGen(
-            gen === 'All Generations'
-                ? 0 // NaN -> 0
-                : Number(gen.value.split(' ')[1].trim())
-        ));
+    const clearResults = async () => {
+        if (pokemonSelected) {
+            setPokemonSelected(null);
+            if (filter) {
+                setFilter('');
+            }
+        }
     };
 
+    // TODO : Finish implementing Material UI components (GenSelector -> DropdownMenu, PokemonDetails, PokemonList)
     return (
         <div>
             <Header />
@@ -100,12 +110,12 @@ export default function App() {
                     {pokemonSelected && <PokemonDetails pokemon={pokemonSelected} />}
                     <div className="pokemon-list-container">
                         <Separator />
-                        <GenSelector options={genList} onSelect={updateGen} />
+                        <GenSelector options={genList} onSelect={updateGen} onChange={clearResults} />
                         <Separator />
                         <PokeSearch input={filter} onChange={updateFilter} onClick={clearFilter} />
                         <Separator />
                         <div ref={myRef}>
-                            <div className='pokemon-wrapper' onClick={executeScroll}>
+                            <div onClick={executeScroll}>
                                 <PokemonList pokemons={filteredPokeList} selectPokemon={handleSelect} isLoading={isLoading} />
                             </div>
                         </div>

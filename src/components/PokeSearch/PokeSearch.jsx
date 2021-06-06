@@ -9,7 +9,7 @@ export default function PokeSearch({ input, onChange, onClick }) {
     return (
         <form className={classes.root} noValidate>
             <CssTextField
-                className={classes.searchContainer}
+                className={classes.searchWrapper}
                 placeholder='Search Pokémon'
                 label={input ? 'Search Pokémon' : ''}
                 variant='outlined'
@@ -22,7 +22,7 @@ export default function PokeSearch({ input, onChange, onClick }) {
                         <InputAdornment position="start">
                             <SearchIcon />
                         </InputAdornment>
-                    ),
+                    )
                 }}
             />
             <ClearButton onClick={onClick} />

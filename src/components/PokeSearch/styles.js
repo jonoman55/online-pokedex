@@ -7,17 +7,8 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
     },
-    searchContainer: {
+    searchWrapper: {
         margin: 'auto',
         width: `calc(100% - ${theme.spacing(6 + 6)}px)`, // 6 button + 6 margin
-    },
-    notchedOutline: {
-        borderColor: 'hsl(0, 0%, 90%) !important'
-    },
-    focusedOutline: {
-        borderColor: 'hsl(11, 89%, 47%) !important'
-    },
-    cssLabel: {
-        color: 'hsl(0, 0%, 0%) !important'
     },
 }));
