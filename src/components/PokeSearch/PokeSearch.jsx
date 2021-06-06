@@ -14,7 +14,7 @@ export default function PokeSearch({ input, onChange, onClick }) {
                 label={input ? 'Search Pokémon' : ''}
                 variant='outlined'
                 id='custom-css-outlined-input'
-                fullWidth
+                size='medium'
                 value={input}
                 onChange={(e) => onChange(e.target.value)}
                 InputProps={{
